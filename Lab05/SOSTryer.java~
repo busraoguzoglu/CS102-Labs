@@ -1,0 +1,31 @@
+import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+import cs101.sosgame.SOS;
+
+public class SOSTryer {
+      
+      public static void main(String[] args){
+            
+            SOS sosgame =new SOS(4);
+            String player1 = "Büþra";
+            String player2 = "Doða";
+            
+            
+           
+            SOSGUIPanel canvas = new SOSGUIPanel(sosgame, player1, player2);
+            
+            JFrame frame = new JFrame ("SOS Game!!");
+            
+            frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+            frame.getContentPane().add (canvas);
+            
+            
+            
+            //System.out.println(sosgame.getCellContents(1,1) + "");
+            
+            frame.pack();
+            frame.setVisible(true);
+      }
+      
+}

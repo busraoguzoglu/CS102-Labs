@@ -1,0 +1,153 @@
+import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+import cs101.sosgame.SOS;
+import java.awt.event.*;
+
+public class SOSGUIPanel extends JPanel{
+
+     //properties
+      
+     SOSCanvas canvas;
+     JPanel scorePanel;
+     JLabel p1;
+     JLabel p2;
+     JRadioButton s;
+     JRadioButton o;
+     SOS game;
+     String player1;
+     String player2;
+     Color myColor = new Color(140,0,180);
+
+     
+     public SOSGUIPanel(SOS game, String player1, String player2){
+           
+           this.game = game;
+           this.player1 = player1;
+           this.player2 = player2;
+           scorePanel = new JPanel();
+           scorePanel.setPreferredSize(new Dimension(600, 100)); 
+           this.setBackground(Color.ORANGE);
+           scorePanel.setBackground(Color.ORANGE);
+           
+           p1 = new JLabel(player1 + ":  " + game.getPlayerScore1());
+           p2 = new JLabel(player2 + ":  " + game.getPlayerScore2());
+           p1.setOpaque(true);
+           p2.setOpaque(true);
+           p1.setBackground(Color.green);
+           p2.setBackground(Color.ORANGE);
+           p1.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+           p2.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+           p1.setForeground(myColor);
+           p2.setForeground(myColor);
+           
+           
+           s = new JRadioButton("S");
+           o = new JRadioButton("O");
+           s.addActionListener(new RadioListener());
+           o.addActionListener(new RadioListener());
+           s.setBackground(Color.ORANGE);
+           o.setBackground(Color.ORANGE);
+           s.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+           o.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+           s.setForeground(myColor);
+           o.setForeground(myColor);
+           
+           
+           scorePanel.add(p1);
+           scorePanel.add(s);
+           scorePanel.add(o);
+           scorePanel.add(p2);
+           
+           canvas = new SOSCanvas(game);
+           canvas.addMouseListener(new CanvasListener());
+           canvas.setBackground(Color.WHITE);
+           
+           this.add(canvas, BorderLayout.CENTER);
+           this.add(scorePanel, BorderLayout.SOUTH);
+           
+           this.setPreferredSize(new Dimension(800, 800));
+
+     }
+     
+     private void reset(){
+     
+     }
+     
+     private class CanvasListener extends MouseAdapter{
+           
+           public void mousePressed(MouseEvent e) {
+                 
+                 Point p = e.getPoint();
+                 double xPosi = p.getX();
+                 double yPosi = p.getY();
+                 
+                 double boxEdge = canvas.getBoxEdge();
+                 
+                 int row = (int)yPosi / (int)boxEdge +1;
+                 int column = (int)xPosi / (int)boxEdge +1;
+                 
+                 if(s.isSelected()){
+                       game.play('s', column, row);
+                       p1.setText(player1 + ":  " + game.getPlayerScore1());
+                       p2.setText(player2 + ":  " + game.getPlayerScore2());
+                       
+                 }
+                 else if(o.isSelected()){
+                       game.play('o', column, row);
+                       p1.setText(player1 + ":  " + game.getPlayerScore1());
+                       p2.setText(player2 + ":  " + game.getPlayerScore2());
+                 }
+                 
+                 int turn = game.getTurn();
+                 
+                 if(turn == 1){
+                       p1.setBackground(Color.green);
+                       p2.setBackground(Color.ORANGE);
+                 }
+                 else if(turn == 2){
+                       p2.setBackground(Color.green);
+                       p1.setBackground(Color.ORANGE);
+                 }
+                 
+                 repaint();
+                 
+                 if(game.isGameOver()){
+                       
+                       String endMes = "";
+                       if(game.getPlayerScore1() > game.getPlayerScore2()){
+                             endMes = player1 + " wins the gameee!!" ; 
+                       }
+                       else if(game.getPlayerScore1() < game.getPlayerScore2()){
+                             endMes = player2 + " wins the gameee!!"; 
+                       }
+                       else if(game.getPlayerScore1() == game.getPlayerScore2()){
+                             endMes = "I's a Draw!! =)";
+                       }
+                       
+                       int again = JOptionPane.showConfirmDialog(canvas, endMes , "Game Over *-*", JOptionPane.DEFAULT_OPTION);
+                       if(again == 0){
+                             System.exit(0);
+                       }
+                 }
+           }
+           
+     } 
+     
+     private class RadioListener implements ActionListener{
+     
+           public void actionPerformed( ActionEvent e ){
+           
+                 if((e.getSource()).equals(s)){
+                       o.setSelected(false);
+                       
+                 }
+                 
+                 else if((e.getSource()).equals(o)){
+                       s.setSelected(false);
+                      
+                 }
+           
+           }
+     }
+}
