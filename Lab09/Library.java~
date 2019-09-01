@@ -1,0 +1,59 @@
+/** 
+ * Library Book Class!!
+ * Author:Büþra Oðuzoðlu
+ * 01.12.2015 
+ */
+
+
+public class Library{
+     
+     // Properties
+     
+//     LibraryBook b1 = null;
+//     LibraryBook b2 = null;
+//     LibraryBook b3 = null;
+//     LibraryBook b4 = null;
+     
+  ArrayList<LibraryBook> books;
+  books = new ArrayList<LibraryBook>();
+     
+     // Constructors
+     
+     public Library(){
+     }
+     
+     // Methods
+     
+     boolean isEmpty(){
+       return (books.size()==0);
+       }
+     }
+     
+     public String toString(){
+       return books + "";
+     }
+     
+     public String displayAll() {
+       return books;
+     }
+     
+     public void add(String title, String author){
+          
+          books.add(title, author);
+     }
+     
+     public void remove(LibraryBook a){
+          books.remove(a);
+     }
+     
+     public LibraryBook findByTitle(String search){
+    
+     }
+     public void displayDetails(LibraryBook a){
+          
+          }
+     }
+      public void removeBook(LibraryBook a){
+          books.remove(a);
+     }
+}

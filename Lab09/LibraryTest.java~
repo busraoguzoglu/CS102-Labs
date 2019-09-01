@@ -1,0 +1,75 @@
+import java.util.Scanner;
+public class LibraryTest{
+     static final String DIVIDER = "-----------------------";
+     static final String HEADER = "LIBRARY OPTIONS";
+     static final String SHOW = "1. SHOW";
+     static final String FIND = "2. FIND";
+     static final String ADD = "3. ADD";
+     static final String EXIT = "4. EXIT";
+     public static void displayMenu(){
+          System.out.println(DIVIDER);
+          System.out.println(HEADER);
+          System.out.println(SHOW);
+          System.out.println(FIND);
+          System.out.println(ADD);
+          System.out.println(EXIT);
+          System.out.println(DIVIDER);
+     }
+     public static void main(String[]args){
+          
+          // Variables
+          
+          Scanner scan = new Scanner(System.in);
+          Scanner scan2 = new Scanner(System.in);
+          Scanner scan3 = new Scanner(System.in);
+          Library myLibrary = new Library();
+          int input;
+          int secondIn;
+          String thirdIn;
+          String title;
+          String author;
+          
+          // Program Code
+          
+          do{
+               displayMenu();
+               System.out.print("Please enter command: ");
+               input = scan.nextInt();
+               if(input == 1){
+                    System.out.println("Plese enter the slot you want to display: ");
+                    secondIn = scan2.nextInt();
+                    if( secondIn == 1 ){
+                         myLibrary.displayDetails(myLibrary.b1);
+                    }
+                    else if( secondIn == 2 ){
+                         myLibrary.displayDetails(myLibrary.b2);
+                    }
+                    else if( secondIn == 3 ){
+                         myLibrary.displayDetails(myLibrary.b3);
+                    }
+                    else if( secondIn == 4 ){
+                         myLibrary.displayDetails(myLibrary.b4);
+                    }
+                    else{
+                         System.out.println("Slot does not exist.");
+                    }
+               }
+               else if(input == 2){
+                    System.out.println("Please enter title: ");
+                    thirdIn = scan2.nextLine();
+                    myLibrary.findByTitle(thirdIn);
+               }
+               else if(input == 3){
+                    System.out.println("Please enter title: ");
+                    title = scan2.nextLine();
+                    System.out.println("Please enter author: ");
+                    author = scan3.nextLine();
+                    myLibrary.add(title, author);
+               }
+               else if(input != 4){
+                    System.out.println("Invalid input.");
+               }
+          }while(input != 4);
+          
+     }
+}
