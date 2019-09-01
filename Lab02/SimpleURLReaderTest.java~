@@ -1,0 +1,22 @@
+import cs1.SimpleURLReader;
+
+public class SimpleURLReaderTest{
+  public static void main( String[] args ){
+    SimpleURLReader reader = new SimpleURLReader("http://www.cs.bilkent.edu.tr/~david/housman.txt"); 
+    MySimpleURLReader myReader = new MySimpleURLReader("http://www.cs.bilkent.edu.tr/~david/housman.txt");
+    HTMLFilteredReader filReader = new HTMLFilteredReader("http://www.cs.bilkent.edu.tr/~david/housman.htm");
+    
+//    
+////    System.out.println( reader.getPageContents() );
+//    System.out.println( reader.getLineCount() );
+//    
+//    System.out.println( myReader.getURL() );
+//    System.out.println( myReader.getName() );
+//    System.out.println( myReader.getPageContents() );
+    
+    System.out.println( filReader.getPageContents() );
+    System.out.println( filReader.getUnfilteredPageContents() );
+    
+    //System.out.println( reader.getPageContents() );
+  }
+}

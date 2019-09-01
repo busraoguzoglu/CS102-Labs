@@ -1,0 +1,8 @@
+public class mySimpleURLReader extends SimpleURLReader{
+
+//methods
+  
+  public String getURL(){
+    return super.url;
+  }
+}

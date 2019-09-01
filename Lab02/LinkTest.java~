@@ -1,0 +1,18 @@
+import cs1.SimpleURLReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class LinkTest{
+
+  public String menu{
+  
+    return 
+    System.out.println("1. Enter the url of poem to add to collection");
+    System.out.println("2. List all poems in the collection");
+    System.out.println("3. Quit");
+    
+  }
+  
+  
+  
+}
