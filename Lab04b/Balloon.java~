@@ -1,0 +1,55 @@
+import shapes.*;
+import java.util.Random;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Balloon extends Circle implements Drawable{
+      
+      //properties
+      public static final int RADIUS = 25;
+      public static final int MAX_RADIUS = 100;
+      Graphics g;
+      
+     
+      
+      public Balloon(int x, int y){
+            super(RADIUS, x, y);
+      }
+      
+      public Balloon(){
+           
+            super(RADIUS, 0,0);
+            
+             Random n = new Random();
+             Random m = new Random();
+             int x= n.nextInt(800);
+             int y= m.nextInt(600);
+            
+            this.setLocation(x,y);
+           
+      }
+      
+       public void draw( Graphics g ){
+            g.drawOval(getX() - this.radius, getY() - this.radius, this.radius,this.radius );   
+      }
+      
+       public boolean grow() {
+             
+             this.radius++;
+             
+             if (this.radius >= MAX_RADIUS) {
+                   this.radius = 0;
+                   this.setSelected(true);
+             }
+           
+             if(this.radius == 0)
+                   return false;
+             else
+                   return true;
+       }
+
+     
+}

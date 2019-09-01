@@ -1,0 +1,11 @@
+import shapes.*;
+import java.util.Random;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class DenemePanel extends JPanel{
+      
+}
