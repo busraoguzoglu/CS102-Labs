@@ -1,0 +1,20 @@
+/**
+ * @deprecated
+ * This is Big Number class!!
+ * Author: Büþra Oðuzoðlu
+ * 15.12.2015
+ */
+
+public class Lab10a{
+     public static void main(String[] args){
+      
+          //variables
+          BigNum b1;
+          BigNum b2;
+          BigNum b3;
+          
+          b1 = new BigNum;
+          
+          
+     }
+}

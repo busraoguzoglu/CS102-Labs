@@ -1,0 +1,68 @@
+/*
+ * This is Big Number class!!
+ * Author: Büþra Oðuzoðlu
+ * 15.12.2015
+ */
+
+import java.util.*;
+
+Scanner scan = new Scanner System.in();
+
+public class BigNum { 
+     
+     System.out.println("");
+     
+     i = scan.nextInt();
+     
+     System.out.println("");
+     
+     scan.nextInt();
+     
+     // Properties
+     
+     int[] digits;
+     int[] digits = new int[i];
+     
+     // Constructors
+    
+     public BigNum() {
+    
+     
+     }
+     
+     public BigNum(String a) {
+     
+     
+     }
+     
+     // Copy Constructor
+     
+     public BigNum() {
+     
+     
+     }
+     
+     // Methods
+     
+     public String toString() {
+     
+     }
+     
+     public boolean equals(BigNum other) {
+     
+     }
+     
+     public boolean isZero() {
+     
+     }
+     
+     public void shift(boolean left) {
+     
+     }
+     
+     public int add(BigNum other) {
+     
+     }
+     
+     
+}

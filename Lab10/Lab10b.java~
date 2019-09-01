@@ -1,0 +1,13 @@
+import java.util.*;
+/**
+ * @deprecated
+ * This is Big Number class!!
+ * Author: Büþra Oðuzoðlu
+ * 15.12.2015
+ */
+
+public class Lab10b{
+     public static void main(String[] args){
+          
+     }
+}
