@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class deneme
+{
+  
+  public static void main ( String[] args )
+  {
+    
+    Scanner scan = new Scanner ( System.in );
+    
+    
+    //variables
+    
+    int n;
+    
+    //constants
+    
+    final char star = '*';
+    final char space = ' ';
+    
+    
+    //code

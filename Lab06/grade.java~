@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class grade
+{
+  
+  public static void main ( String[] args )
+  {
+    
+    Scanner scan = new Scanner ( System.in );
+     
+    public static char toLetter ( int grade )
+    {
+      grade = scan.nextInt();
+      
+      if ( grade >= 85 )
+      {
+        System.out.println ( 'A' );
+      }
+      else if ( grade < 85 && grade >= 70 )
+      {
+        System.out.println ( 'B' );
+      }
+      else if ( grade < 70 && grade >= 50)
+      {
+        System.out.println ( 'C' );
+      }
+      else if ( grade < 50 )
+      {
+        System.out.println ( 'D' );
+      }
+      
+    }
+    
+
+
+
+//variables
+    //constants
+    //program code

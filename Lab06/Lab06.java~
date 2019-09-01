@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class Lab06
+{
+  public static int power( x,y,z )
+  {  
+    int z = 1;
+    for ( int counter1, counter1 < y, counter1++ )
+    z = ( z * x )
+  }
+  public static void main( String[] args)
+  {
+  }

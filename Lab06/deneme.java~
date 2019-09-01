@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class deneme
+{
+  
+  public static String printLine ( String : line )
+  
+  {
+    String line = ---------------
+    System.out.println (line);
+    return(line);
+  }
+  
+  public static void main ( String[] args )
+  {
+    
+    Scanner scan = new Scanner ( System.in );
+    
+    
+    //variables
+    
+    int n;
+    
+    
+    //code
+    
+    System.out.println ( "Enter n");
+    
+    n = scan.nextInt();
+    
+    System.out.println ( "\t" );
+    
+    for ( i = 1 ; i <= n ; i++ )
+    {
+      System.out.println ( i );
+    }
+    
+    printLine();
+    
+    
