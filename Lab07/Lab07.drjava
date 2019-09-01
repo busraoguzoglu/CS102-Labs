@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20140826-r5761">
+  <project autorefresh="false" build="classes/" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="SimpleLinkedList.java" package="" timestamp="22-Apr-2016 14:08:04">
+        <select from="547" to="547"/>
+        <scroll column="5" row="0"/>
+      </file>
+      <file name="ListTest.java" package="" timestamp="19-Apr-2016 20:01:53">
+        <select from="547" to="547"/>
+        <scroll column="5" row="0"/>
+      </file>
+      <file name="StackTest.java" package="" timestamp="22-Apr-2016 13:50:12">
+        <select from="547" to="547"/>
+        <scroll column="5" row="0"/>
+      </file>
+      <file name="SimpleStack.java" package="" timestamp="22-Apr-2016 14:09:03">
+        <select from="547" to="547"/>
+        <scroll column="5" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
