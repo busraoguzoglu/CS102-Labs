@@ -1,0 +1,9 @@
+public interface Locatable{
+
+      int x;
+      int y;
+      
+      public int getX();
+      public int getY();
+
+}

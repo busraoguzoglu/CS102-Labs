@@ -1,0 +1,17 @@
+public class Square extends Rectangle{
+
+
+      //properties
+      
+      int side;
+      
+      //constructor
+      public Square( int side ){
+            this.side = side;
+      }
+      
+      //methods
+      public double getArea(){
+            return side*side;
+      }
+}
