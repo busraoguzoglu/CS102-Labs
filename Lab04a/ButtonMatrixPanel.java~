@@ -1,0 +1,106 @@
+import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ButtonMatrixPanel extends JPanel{
+      
+      
+      private int count;
+      private ArrayList<JButton> buttons;
+      private LabelPanel label;
+      private JButton push;
+      Random rand = new Random();
+      public Boolean isGameOver;
+      int  n;
+      JPanel buttonPanel;
+      
+      //-----------------------------------------------------------------
+      //  Constructor: Sets up the GUI.
+      //-----------------------------------------------------------------
+      
+      public ButtonMatrixPanel ()
+      {    
+            
+            isGameOver = false;
+            n = rand.nextInt(25);   
+            
+            label = new LabelPanel();
+            this.add(label, BorderLayout.NORTH);
+            
+            buttons = new ArrayList<JButton>();
+            PrizeListener pl = new PrizeListener();
+            
+            for( int d = 0; d < 25; d++ ){
+                  push = new JButton ("Push Me!" + ( d + 1 ) );
+                  buttons.add(push);
+            }
+            
+            for( int b = 0; b < 25; b++ ){
+                  if(b != n){
+                        buttons.get(b).addActionListener(new ButtonListener());
+                  }
+                  else
+                        buttons.get(b).addActionListener(pl);
+            }
+            
+            this.setLayout(new FlowLayout());
+            
+            JPanel buttonPanel = new JPanel(new GridLayout(5,5));
+            
+            for( int x = 0; x < 25; x++ ){
+                  buttonPanel.add(buttons.get(x));
+            }
+            
+            this.add(buttonPanel);
+            
+            setPreferredSize (new Dimension(600, 300));
+            setBackground (Color.yellow);
+            
+      }
+      
+      
+      //*****************************************************************
+      //  Represents a listener for button push (action) events.
+      //*****************************************************************
+      
+      
+      
+      
+      private class ButtonListener implements ActionListener
+      {
+            public void actionPerformed (ActionEvent event)
+            {
+                  count++;
+                  label.setText("Pushes: " + count);
+            }
+      }
+      
+      
+      private class PrizeListener implements ActionListener{
+            public void actionPerformed (ActionEvent event){
+                  label.setText("Hurray!! Prize Found in  " + count + "  tries.");
+                  isGameOver =true;
+                  count = 0;
+                 
+//                  buttons.remove(n);
+//                  buttons.add(n, new JButton("Push Me!" + ( n + 1 ) ));
+//                  buttons.get(n).addActionListener(new ButtonListener());
+//                  
+//                  n = rand.nextInt(25);
+//                  buttons.remove(n);
+//                  buttons.add(n, new JButton("Push Me!" + ( n + 1 ) ));
+//                  buttons.get(n).addActionListener(new PrizeListener());
+            
+                
+            }
+      }
+      
+      public boolean isGameOver(){
+            return this.isGameOver;
+      }
+      
+      public void resetGame(){
+            
+      }
+}
